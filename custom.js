@@ -38,12 +38,12 @@ $(document).ready(function () {
                     scrollTop: $("#about-scroll").offset().top
                 }, 1000);
     });
-    scrollOffer.on('click', function () {
+    // scrollOffer.on('click', function () {
        
-         $('html, body').animate({
-                    scrollTop: $("#offer-scroller").offset().top
-                }, 1000);
-    });
+    //      $('html, body').animate({
+    //                 scrollTop: $("#offer-scroller").offset().top
+    //             }, 1000);
+    // });
     scrollPrice.on('click', function (e) {
         e.preventDefault();
          $('html, body').animate({
@@ -187,10 +187,29 @@ $(document).ready(function () {
     })
 
     
+    var fooSpo = function () {
+        var textReplace = $(this).html();
+        var lettersToReplace = ["a", "i", "o", "u", "w", "z", "A", "I", "O", "U", "W", "Z"];
+        var arrayLength = lettersToReplace.length;
+        for (var i = 0; i < arrayLength; i++) {
+            var textSplit = textReplace.split(' ' + lettersToReplace[i] + ' ');
+            var textReplace = textSplit.join(' ' + lettersToReplace[i] + '&nbsp;');
+        }
+        $(this).empty();
+        $(this).html(textReplace);
+    }
+    var initSpo = function () {
+        $('p').each(fooSpo);
+        $('li').each(fooSpo);
+    }
+
+    initSpo(); 
+     
+    
     var lastScrollTop = 0;
     $(window).on('scroll',function() {
         var iCurScrollPos = $(this).scrollTop();
-        console.log( $(this).scrollTop() , lazyloaderContent.offset().top+lazyloaderContent.height()/2 )
+        // console.log( $(this).scrollTop() , lazyloaderContent.offset().top+lazyloaderContent.height()/2 )
         if (iCurScrollPos > lastScrollTop ) {
               for (var i =0; i<lazyloaderContent.length; i++) {
                    if (lazyloaderContent.eq(i).offset().top+lazyloaderContent.eq(i).height()/2 <= $(this).scrollTop()+$(this).height())  {

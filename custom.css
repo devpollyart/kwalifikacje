@@ -138,7 +138,9 @@ body,h1,h2,h3,h4,h5,h6,p,span,a,li {
     color: white;
 }
 .infoCatcher span img {
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    margin-right: 2px;
+    margin-bottom: 2px;
 }
 #header .header-top a[data-depth="0"] {
     font-size: 16px;
@@ -1217,10 +1219,11 @@ a  {
     max-width: 1170px;
     margin: auto;
 }
-#password #content-wrapper #main .page-header {\
+#password #content-wrapper #main .page-header {
     max-width: 1170px;
     margin: auto;
 }
+
 #password #content-wrapper #main #content {
     max-width: 1170px;
     margin: auto;
@@ -1300,7 +1303,167 @@ a  {
 .collapse li:nth-of-type(2) {
     margin-bottom: 30px;
 }
+#cms #header {
+    z-index: 1000;
+}
+#cms #main .page-content {
+    padding: 0;
+}
+.oferta__header {
+    height: 500px;
+    background: url('/img/oferta/bg.jpg') no-repeat 0 0 / 100%;
+    width: 100%;
+    top: -85px;
+    left: 0;
+    position: relative;
+    z-index: 200;
+    padding: 0;
+}
+.oferta__about__title {
+    text-align: center;
+    font: bold 38px Roboto, sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+}
+.oferta__about__title::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: url(/img/oferta/icon.png) no-repeat 50% 100% / 25px 25px, #fff;
+    position: absolute;
+    left: 50%;
+    padding: 0 10px;
+    bottom: -40px;
+    transform: translate(-50%,0);
+    z-index: 100;
+}
+.oferta__about__title::after {
+    content: '';
+    width: 200px;
+    height: 1px;
+    border-top: 1px #000 dotted;
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translate(-50%,0);
+    z-index: 1;
+}
+.oferta__about__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.oferta__about__content__text {
+    max-width: 570px;
+}
+.oferta__about__content__img {
+    width: 570px;
+}
+.oferta__about__content__text h4 {
+    font: bold 18px/26px Roboto, sans-serif;
+    color: #000;
+    margin: 50px 0 20px;
+}
+.oferta__about__content__text p {
+    font:  18px/28px Roboto, sans-serif;
+    color: #777777;
+    margin: 10px 0;
+}
+.oferta__about__text--down {
+    text-align: center;
+    color: #000;
+    font:  40px Roboto, sans-serif;
+    margin: 50px 0 80px;
+}
+.oferta__contact {
+    background: #F6F6F6;
+}
+.oferta__contact__title {
+    margin-bottom: 100px;
+    padding-top: 50px;
+    color: #000;
+    font: bold 38px Roboto, sans-serif;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+.oferta__contact__title::after {
+    content: '';
+    width: 200px;
+    height: 1px;
+    border-top: 1px #000 dotted;
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translate(-50%,0);
+    z-index: 1;
+}
+.oferta__contact__title::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: url(/img/oferta/marker.png) no-repeat 50% 100% / 17px 25px, #F6F6F6;
+    position: absolute;
+    left: 50%;
+    padding: 0 10px;
+    bottom: -40px;
+    transform: translate(-50%,0);
+    z-index: 100;
+}
+.oferta__contact__content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    align-items: flex-start;
+}
+.oferta__contact__content > div:first-of-type {
+    max-width: 370px;
+}
+.oferta__contact__content > div:nth-of-type(2){
+    max-width: 184px;
+}
+.oferta__contact__content > div:last-of-type {
+    max-width: 200px;
+}
+.oferta__contact__content > div p {
+    margin: 0;
+    font: 18px/28px Roboto, sans-serif;
+    color: #777777;
+}
+.oferta__contact__content > div p .bold {
+    font-weight: 900;
+}
+.oferta__contact__content > div:last-of-type p:nth-last-of-type(4){
+    margin-top: 40px;
+}
+.oferta__hotels__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    font:  40px Roboto, sans-serif;
+    margin: 60px 0 70px;
+}
+.oferta__hotels__pictures {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 740px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+.oferta__hotels__pictures img:hover {
+    transform: scale(1.1);
+    transition: .4s;
+}
 @media all and (max-width:1400px) {
+    .oferta__header {
+        height: 350px;
+    }
     #index .btn-primary {
         font-size: 12px;
     }
@@ -1394,6 +1557,19 @@ a  {
     }
     .button-kurs {
         margin-top: 50px;
+    }
+    .oferta__header {
+        position: static;
+    }
+    .oferta__about__content__text {
+        padding-right: 20px;
+    }
+    .oferta__about__text--down {
+        padding: 0 20px;
+        font-size: 34px;
+    }
+    .oferta__contact__content {
+        padding: 0 20px 50px;
     }
 }
 @media all and (max-width:965px) {
@@ -1538,8 +1714,29 @@ a  {
         WIDTH: 250px;
         height: auto;
     }
+    .oferta__header {
+        height: 250px;
+    }
+    .oferta__about__content {
+        flex-direction: column;
+    }
+    .oferta__contact__content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .oferta__contact__content > div {
+        max-width: 90% !important;
+        margin: 20px 0;
+    }
+    .oferta__hotels__title {
+        font-size: 32px;
+    }
 }
 @media all and (max-width:767px) {
+    .oferta__hotels__pictures {
+        flex-direction: column;
+    }
     #header .header-top .position-static {
         width: 100%;
     }
@@ -1645,6 +1842,28 @@ a  {
     }
 }
 @media all and (max-width:575px) {
+    .oferta__header {
+        background: url(/img/oferta/bg.jpg) no-repeat 50% 0 /180%;
+    }
+    .oferta__about__content__text {
+        padding: 0 20px;
+    }
+    .oferta__hotels__pictures img {
+        margin: 10px 0;
+    }
+    .oferta__about__content__img {
+        width: initial;
+    }
+    .oferta__about__content__img img {
+        width: 100%;
+    }
+    .oferta__about__text--down {
+        font-size: 28px;
+    }
+    .oferta__hotels__title {
+        font-size: 28px;
+        padding: 0 20px;
+    }
     #header .header-top .position-static {
         width: 100%;
     }
